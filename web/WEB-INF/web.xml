@@ -13,4 +13,13 @@
             30
         </session-timeout>
     </session-config>
+     <context-param>
+        <param-name>Database Driver</param-name>
+        <param-value>com.mysql.cj.jdbc.Driver</param-value>
+    </context-param>
+      <context-param>
+        <param-name>Database Url</param-name>
+        <param-value>jdbc:mysql://localhost:3306/user_database</param-value>
+    </context-param>
+    
 </web-app>
