@@ -9,28 +9,28 @@
  * @author Viral
  */
 public class Login {
-    int id;
+    int credential_id;
     String username;
     String password; 
 
-    public Login(int id, String username, String password) {
-        this.id = id;
+    public Login(int credential_id, String username, String password) {
+        this.credential_id = credential_id;
         this.username = username;
         this.password = password;
     }
 
     public Login() {
-        this.id = 0;
+        this.credential_id = 0;
         this.username = "";
         this.password = "";
     }
 
     public int getId() {
-        return id;
+        return credential_id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.credential_id = id;
     }
 
     public String getUsername() {
@@ -51,7 +51,7 @@ public class Login {
 
     @Override
     public String toString() {
-        return "Login{" + "id=" + id + ", username=" + username + ", password=" + password + '}';
+        return "Login{" + "id=" + credential_id + ", username=" + username + ", password=" + password + '}';
     }
     
     

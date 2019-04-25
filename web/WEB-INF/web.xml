@@ -4,22 +4,29 @@
         <servlet-name>DemoServlet</servlet-name>
         <servlet-class>DemoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InsertUserServlet</servlet-name>
+        <servlet-class>InsertUserServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DemoServlet</servlet-name>
         <url-pattern>/DemoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InsertUserServlet</servlet-name>
+        <url-pattern>/Insert</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-     <context-param>
+    <context-param>
         <param-name>Database Driver</param-name>
         <param-value>com.mysql.cj.jdbc.Driver</param-value>
     </context-param>
-      <context-param>
+    <context-param>
         <param-name>Database Url</param-name>
         <param-value>jdbc:mysql://localhost:3306/user_database</param-value>
     </context-param>
-    
 </web-app>
