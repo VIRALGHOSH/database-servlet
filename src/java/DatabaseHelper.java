@@ -51,7 +51,7 @@ public class DatabaseHelper {
             u.credential_id = rs.getInt("id");
             }
             if(u.credential_id > 0 ){
-            query = "insert into user_reistration_tb (name, gender, credential_id) values (?,?,?)";
+            query = "insert into user_registration_tb (name, gender, credential_id) values (?,?,?)";
             PreparedStatement statement1 = con.prepareStatement(query);
             statement1.setString(1, u.name);
             statement1.setString(2, u.gender);
@@ -65,4 +65,24 @@ public class DatabaseHelper {
         }
         return status;
     }
+       public ArrayList<User> getUsers(){
+      ArrayList<User> userList = new ArrayList<>();
+        try {
+            Statement cmd = con.createStatement();
+            String query = "select u.name, u.gender, c.username, c.password from credentials_tb as c join user_registration_tb as u on c.id = u.id";
+            ResultSet rs = cmd.executeQuery(query);
+            while(rs.next()){
+                User item = new User();
+                item.name = rs.getString("name");          // we can also use colom names
+                item.gender = rs.getString(2);
+                item.username = rs.getString(3);
+                item.password = rs.getString(4);
+                userList.add(item);
+            }
+        } catch (Exception e) {
+             System.out.println("Error in Getting items "+e.getMessage());
+        }
+        return userList;
+    }
+      
 }
